@@ -156,7 +156,7 @@ The pipeline ensures reproducible, clean, and scalable machine learning workflow
 
 ## Author
 
-Omar Hatem Ellaban
+Omar Hatem Ellaban | 
 Machine Learning & Deep Learning Engineer  
 
 Feel free to fork, improve, or contact for collaborations!
