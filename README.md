@@ -45,7 +45,7 @@ XGBoost identified the following as the most influential predictors of home sale
 These reflect structural quality, garage capacity, living area, and overall home condition.
 
  **Visualization:**  
-![Feature Importance](xgb_feature_importance.png)
+![Feature Importance](Figure_1.png)
 
 ---
 
