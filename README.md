@@ -55,12 +55,12 @@ These reflect structural quality, garage capacity, living area, and overall home
 House-Price-Prediction/
 │
 ├── Data/
-│   ├── train.csv
-│   ├── test.csv
-│
-├── train_model_xgb.py
-├── predict_on_test_pipeline.py
-├── feature_importance_xgb.py
+│    ├── train.csv
+│    ├── test.csv
+├──src/
+│    ├── train_model_xgb.py
+│    ├── predict_on_test_pipeline.py
+│    ├── feature_importance_xgb.py
 │
 ├── model_xgb_pipeline.pkl
 ├── submission_xgb_pipeline.csv
