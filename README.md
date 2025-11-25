@@ -73,10 +73,6 @@ House-Price-Prediction/
 
 ## Installation
 
-```bash
-pip install -r requirements.txt
-```
-
 Typical required libraries:
 
 ```
