@@ -12,7 +12,7 @@ The workflow includes data preprocessing, feature engineering, model training wi
 - Automatic handling of missing values (numeric → median, categorical → mode)  
 - Full One-Hot Encoding applied consistently to both train and test  
 - Model export using `joblib`  
-- Separate inference script generates Kaggle-ready `submission.csv`
+- Separate inference script generates `submission.csv`
 - Feature importance visualization (`xgb_feature_importance.png`)
 
 ---
