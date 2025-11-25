@@ -117,8 +117,6 @@ This script will:
 - Save results to:  
   `submission_xgb_pipeline.csv`
 
-This file is ready for Kaggle submission.
-
 ---
 
 ## Visualizing Feature Importance
@@ -146,7 +144,7 @@ This generates and saves:
 ## Results Summary
 
 This project produces a strong regression model with **R² ≈ 0.92**, demonstrating good ability to explain variance in housing prices.  
-The pipeline ensures reproducible, clean, and scalable machine learning workflow suitable for production or Kaggle competition use.
+The pipeline ensures reproducible, clean, and scalable machine learning workflow suitable for production .
 
 ---
 
