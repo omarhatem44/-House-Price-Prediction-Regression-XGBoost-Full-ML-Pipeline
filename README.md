@@ -62,7 +62,7 @@ House-Price-Prediction/
 │    ├── predict_on_test_pipeline.py
 │    ├── feature_importance_xgb.py
 │
-├── model_xgb_pipeline.pkl
+├── model_xgb_pipeline.pkl  ( trained model )
 ├── submission_xgb_pipeline.csv
 ├── xgb_feature_importance.png
 │
