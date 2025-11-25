@@ -9,9 +9,8 @@ from sklearn.impute import SimpleImputer
 from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 
-from xgboost import XGBRegressor  # موديل XGBoost
+from xgboost import XGBRegressor  
 
-# مسارات الملفات (نستخدم المسارات النسبية من فولدر المشروع)
 DATA_PATH = r".\Data\train.csv"
 TARGET_COL = "SalePrice"
 MODEL_PATH = r"D:\projects for my CV\House price predection ( Regression )\XGBoost\model_xgb_pipeline.pkl"
@@ -28,7 +27,6 @@ def prepare_features_and_target(df: pd.DataFrame):
     if TARGET_COL not in df.columns:
         raise ValueError(f"Target column '{TARGET_COL}' not found in data.")
 
-    # نستبعد Id لأنه مالوش معنى في التنبؤ
     drop_cols = [TARGET_COL]
     if "Id" in df.columns:
         drop_cols.append("Id")
@@ -46,12 +44,8 @@ def prepare_features_and_target(df: pd.DataFrame):
 
 
 def build_preprocessor(numeric_features, categorical_features):
-    # Numeric: NaN → median
-    numeric_transformer = Pipeline(steps=[
-        ("imputer", SimpleImputer(strategy="median"))
-    ])
-
-    # Categorical: NaN → mode + OneHot
+    numeric_transformer = Pipeline(steps=[("imputer", SimpleImputer(strategy="median"))])   # Numeric: NaN → median
+     # Categorical: NaN → mode + OneHot
     categorical_transformer = Pipeline(steps=[
         ("imputer", SimpleImputer(strategy="most_frequent")),
         ("onehot", OneHotEncoder(handle_unknown="ignore"))
@@ -97,7 +91,6 @@ def train_and_evaluate_model(X, y, preprocessor):
     print("[INFO] Predicting on validation set...")
     y_pred = clf.predict(X_valid)
 
-    # sklearn عندك قديمة، فنحسب RMSE يدوي
     mse = mean_squared_error(y_valid, y_pred)
     rmse = mse ** 0.5
     r2 = r2_score(y_valid, y_pred)
@@ -126,3 +119,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
