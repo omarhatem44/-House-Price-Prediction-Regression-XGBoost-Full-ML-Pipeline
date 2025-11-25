@@ -19,9 +19,6 @@ def load_model(path: str):
 
 
 def get_feature_names_from_pipeline(model: Pipeline):
-    """
-    استرجاع أسماء الـ features بعد الـ OneHotEncoding.
-    """
     preprocessor = model.named_steps["preprocessor"]
     transformers = preprocessor.transformers_
 
@@ -29,12 +26,9 @@ def get_feature_names_from_pipeline(model: Pipeline):
 
     for name, transformer, cols in transformers:
         if name == "num":
-            # numeric columns (no change)
-            feature_names.extend(cols)
-
+            feature_names.extend(cols)    # numeric columns 
         elif name == "cat":
-            # categorical columns → OneHotEncoder
-            ohe = transformer.named_steps["onehot"]
+            ohe = transformer.named_steps["onehot"]     # categorical columns → OneHotEncoder
             ohe_feature_names = ohe.get_feature_names_out(cols)
             feature_names.extend(ohe_feature_names)
 
@@ -46,10 +40,9 @@ def plot_feature_importance(model: Pipeline, feature_names):
 
     importances = xgb.feature_importances_
 
-    # ترتيب من الأكبر إلى الأصغر
     indices = np.argsort(importances)[::-1]
 
-    top_n = 20  # نعرض أهم 20 فقط
+    top_n = 20 
     top_indices = indices[:top_n]
 
     plt.figure(figsize=(12, 8))
@@ -73,3 +66,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
