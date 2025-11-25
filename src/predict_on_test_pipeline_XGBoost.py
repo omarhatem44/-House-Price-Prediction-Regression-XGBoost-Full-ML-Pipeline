@@ -24,7 +24,6 @@ def load_test_data(path: str) -> pd.DataFrame:
 
 
 def predict_and_save(model, df_test: pd.DataFrame, out_path: str):
-    # نجيب عمود Id
     id_col = None
     for cand in ["Id", "id", "ID"]:
         if cand in df_test.columns:
@@ -36,7 +35,6 @@ def predict_and_save(model, df_test: pd.DataFrame, out_path: str):
 
     test_ids = df_test[id_col].copy()
 
-    # نفس الفكرة اللي عملناها في التدريب: نستبعد Id
     X_test = df_test.drop(columns=[id_col])
 
     print("[INFO] Making predictions on test data (using full pipeline)...")
@@ -61,3 +59,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
